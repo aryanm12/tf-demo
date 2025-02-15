@@ -1,7 +1,7 @@
 resource "aws_instance" "web" {
   ami           = var.ami_id
   instance_type = "t3.micro"
-  vpc_security_group_ids = [aws_security_group.allow_tls.id]
+  vpc_security_group_ids = [aws_security_group.allow_ssh.id]
   key_name      = aws_key_pair.my_key.key_name
   provisioner "file" {
     source      = "test.txt"   # Local file
@@ -44,9 +44,9 @@ resource "aws_key_pair" "my_key" {
   public_key = file("~/.ssh/id_rsa.pub")
 }
 
-resource "aws_security_group" "allow_tls" {
-  name        = "allow_tls_provisioner"
-  description = "Allow TLS inbound traffic and all outbound traffic"
+resource "aws_security_group" "allow_ssh" {
+  name        = "allow_ssh_provisioner"
+  description = "Allow ssh inbound traffic and all outbound traffic"
   ingress {
     from_port        = 22
     to_port          = 22

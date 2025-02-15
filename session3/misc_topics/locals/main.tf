@@ -7,6 +7,7 @@ data "aws_vpc" "example" {
 
 locals {
   common_prefix = "${var.account}-${var.environment}"
+  eks_version = "1.31"
 }
 
 resource "aws_subnet" "public_subnet1" {
