@@ -7,5 +7,5 @@ variable "performance" {
 variable "ami_id" {
   description = "AMI ID to use for the EC2 instances"
   type        = string
-  default     = "ami-0866a3c8686eaeeba" # Replace with a valid AMI ID
+  default     = "ami-0198a868663199764" # Replace with a valid AMI ID in your region
 }

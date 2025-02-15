@@ -1,17 +1,17 @@
 variable "ami_id" {
     type = string
-    default = "ami-0866a3c8686eaeeba"
+    default = "ami-0198a868663199764"
 }
 
 variable "instance" {
   default = {
     "web-server" = {
         instance_type = "t3.micro"
-        availability_zone = "us-east-1a"
+        availability_zone = "ap-southeast-1a"
     },
     "data-server" = {
         instance_type = "t2.micro"
-        availability_zone = "us-east-1b"
+        availability_zone = "ap-southeast-1b"
     }
   }
   type = map(object({
