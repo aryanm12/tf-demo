@@ -1,0 +1,7 @@
+Req:
+
+-> Define the provider
+-> Create an EC2 instance using Terraform
+-> All the Arguments of the EC2 resource in the Terraform file should be variablized
+-> All the variables should be declared in a separate variables.tf file
+-> Create multiple .tfvars files for creating different EC2s in different env. e.g.: dev.tfvars and prod.tfvars
