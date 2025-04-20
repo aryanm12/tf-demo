@@ -1,0 +1,19 @@
+demo_vpc_cidr = "10.0.0.0/16"
+demo_prv_sub_cidr_01 = "10.0.1.0/24"
+prv_sub_name_01 = "demo_prv_01"
+demo_prv_sub_cidr_02 = "10.0.2.0/24"
+prv_sub_name_02 = "demo_prv_02"
+demo_pub_sub_cidr_01 = "10.0.3.0/24"
+pub_sub_name_01 = "demo_pub_01"
+demo_pub_sub_cidr_02 = "10.0.4.0/24"
+pub_sub_name_02 = "demo_pub_02"
+instance_configurations = {
+    "web-server" = {
+        instance_type = "t3.micro"
+        availability_zone = "ap-southeast-1a"
+    },
+    "data-server" = {
+        instance_type = "t2.micro"
+        availability_zone = "ap-southeast-1b"
+    }
+}

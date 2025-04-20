@@ -1,0 +1,28 @@
+
+Problem statement:
+
+We need to create following services in AWS for 4 different envs, which are dev, qa, uat & prod:
+
+VPC - 2 public and 2 private subnets
+5 EC2 servers
+1 ALB
+1 RDS
+
+what is the ideal approach that a devops engineer should take?
+
+the state should stored at a remote location / preferably S3 with state locking enable
+
+
+Ans:
+
+We will take the modular approach here,
+
+Meaning we will create a terraform module and overwrite the configuration basis each env's req.
+
+Steps:
+
+1.) Create modules
+2.) Call modules
+3.) Define Remote state backend
+4.) define env specific folders with tfvars and backend tfvars
+5.) execute the code

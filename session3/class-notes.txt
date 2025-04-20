@@ -1,0 +1,58 @@
+DevOps 1:
+
+    terraform init
+
+    terraform plan
+
+    terraform apply - the infra got created
+
+    scenario 1:
+
+    terraform.tfstate was created inside our local folder in our laptops
+
+    the state of this infra is only stored in my local dir
+
+    scanerio 2: 
+
+    terraform.tfstate was created inside our local folderbut synced to a remote shared location
+
+    scenario 3:
+
+    DevOp 1 is trying to execute the terraform code
+
+    state locking feature -> lock the state file
+
+DevOps 2: picks up the same code
+
+    terraform apply 
+
+    scenario 1:
+
+    Does not have access to the terraform.tfstate file kep in devops 1 local filesystem
+
+    Terraform will not be able to understand the state
+
+    it will attempt to create the entire infra again and fail
+
+    scenario 2:
+
+    terraform will 1st sync or fetch the state file from the remote location and check the current status
+
+    terraform will say that nothing to apply
+
+    scenario 3:
+
+    DevOp 2 is trying to execute the terraform code at the same time of devops 1
+
+    error message saying state is locked wait for the earlier execution to complete
+
+
+Q.1.) How do you identify which subnet is a private subnet and which is a public subnet in AWS VPC
+
+VPC -> Subnet -> Associated with Route Tables
+
+Public Subnets (1-3 or more) -> 1 Route Table which is a public Route
+
+Private Subnets (1-3 or more) -> 1 Route Table which is a private Route
+
+What is the difference between AWS Internet Gateway and NAT Gateway
